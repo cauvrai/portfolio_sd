@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Fira+Code&display=swap');
+
+:root {
+  --bleu-principal: #235fbe;
+  --gris-fonce: #222;
+  --gris-clair: #f5f5f7;
+  --violet-fantaisie: #235fbe;
+  --font-sans: 'Montserrat', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding-top: 70px;
+  background: var(--gris-clair);
+  color: var(--gris-fonce);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/* NAVIGATION */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+}
+
+nav a {
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  color: var(--bleu-principal);
+  text-decoration: none;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  transition: background 0.2s, border 0.2s;
+}
+
+nav a:hover {
+  background: var(--bleu-principal);
+  color: white;
+  border: 2px solid var(--bleu-principal);
+}
+
+/* HEADER */
+header {
+  background: var(--bleu-principal);
+  color: white;
+  padding: 3rem 1.5rem 5rem;
+  text-align: center;
+}
+
+header h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+}
+
+header p {
+  font-style: italic;
+  font-weight: 400;
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* SECTION */
+section {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  border-bottom: 3px solid var(--bleu-principal);
+  padding-bottom: 0.3rem;
+  margin-bottom: 1.5rem;
+}
+
+/* SECTIONS SPÉCIFIQUES */
+#about, #skills {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem 2.5rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+#about p.fantaisie {
+  color: var(--violet-fantaisie);
+  font-weight: 600;
+}
+
+#projects {
+  display: grid;
+  gap: 1.8rem;
+}
+
+.project-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.8rem 2rem;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.project-title {
+  font-weight: 700;
+  color: var(--bleu-principal);
+  margin-bottom: 0.6rem;
+}
+
+.project-tech {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--violet-fantaisie);
+  margin-bottom: 1rem;
+}
+
+.skill {
+  margin-bottom: 1.2rem;
+}
+.skill-name {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+.skill-bar {
+  background: #ddd;
+  height: 12px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.skill-level {
+  height: 100%;
+  background: var(--bleu-principal);
+  border-radius: 10px 0 0 10px;
+}
+
+#contact {
+  text-align: center;
+  padding: 3rem 1rem 5rem;
+}
+
+#contact a {
+  display: inline-block;
+  margin: 0 1rem;
+  text-decoration: none;
+  color: var(--bleu-principal);
+  font-weight: 700;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+#contact a:hover {
+  border-color: var(--bleu-principal);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  nav {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  nav a {
+    margin: 0.3rem;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  section {
+    margin: 2rem 1rem;
+  }
+}
+
+/* Style spécifique à la page personnelle */
+.decorative-image {
+  position: absolute;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.decor-top-right {
+  top: 400px;
+  right: 30px;
+  width: 100px;
+}
+
+.decor-bottom-left {
+  bottom: 30px;
+  left: 20px;
+  width: 100px;
+}
+
+.decor-middle-right {
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 90px;
+}
+
+.decor-top-left {
+  top: 60px;
+  left: 20px;
+  width: 80px;
+}
+
+.decor-bottom-right {
+  bottom: 20px;
+  right: 30px;
+  width: 80px;
+}
+
+#personal-section {
+  position: relative;
+  background: white;
+  border-radius: 10px;
+  padding: 3rem 2rem;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  font-size: 1.15rem;
+  z-index: 1;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 160px;
+  border-radius: 60%;
+  object-fit: cover;
+  border: 4px solid white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.header-text {
+  text-align: left;
+  max-width: 750px;
+}
+
+    body {
+      background: #fff0f5;
+    }
+
+    h2 {
+      color: var(--violet-fantaisie);
+    }
+
+    .perso-box {
+      background: white;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 8px 20px rgba(157, 78, 221, 0.15);
+      margin-bottom: 2rem;
+    }
+
+    section {
+      max-width: 750px;
+      margin: 3rem auto;
+      padding: 0 2rem;
+    }
+
+    .image-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 2rem auto;
+      max-width: 800px;
+      padding: 0 1rem;
+    }
+
+    .image-row img {
+      width: 100px;
+      height: auto;
+    }
+
+    .centered-text {
+      text-align: center;
+    }
+
+    section {
+  max-width: 1100px; /* Agrandit la section contenant les cartes */
+}
+
+.project-card {
+  padding: 2.5rem 2.5rem; /* Plus d'espace à l'intérieur */
+}
+
+.project-card p {
+  font-size: 1.05rem; /* Texte légèrement agrandi */
+}
+/* Images décoratives autour de .perso-box sans détruire l’interface */
+.perso-box {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 8px 20px rgba(157, 78, 221, 0.15);
+  margin-bottom: 3rem;
+  z-index: 1;
+  overflow: visible;
+}
+
+/* Images décoratives positionnées autour de la box */
+.decorative-image {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.9;
+  transform: translate(-50%, -50%);
+}
+
+
+.image-grid {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.image-grid img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
